@@ -1,0 +1,49 @@
+@import "~_variables.scss";
+
+.bg-holder  {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/assets/image/img-bg-1.jpg');
+  margin-top: -50px;
+  padding: 100px 0;
+  // height: calc(100vh - 74px);
+}
+
+.card {
+  box-shadow: $box-shadow-2;
+}
+
+.steps {
+  & .row {
+    margin-top: 15px;
+  }
+  & .lead {
+    margin: 15px 0;
+  }
+
+  .smpl-step-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #007bff;
+    opacity: .65;
+    position: relative;
+    float: right;
+    
+    @media(max-width:480px) {
+      float: none;
+      margin: 0 auto;
+    }
+
+    & .icon {
+      font-size: 40px; 
+      color: #fff; 
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      
+    }
+   
+  }
+}

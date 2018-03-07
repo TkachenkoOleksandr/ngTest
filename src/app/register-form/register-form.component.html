@@ -1,0 +1,92 @@
+<div class="bg-holder">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form #registerForm="ngForm" (submit)="register()">
+              <div class="form-group">
+                <label for="email">Email</label>
+
+                <input type="email"
+                       class="form-control"
+                       [(ngModel)]="email"
+                       id="email"
+                       name="email"
+                       placeholder="Email"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+
+                <input type="password"
+                       class="form-control"
+                       [(ngModel)]="password"
+                       id="password"
+                       name="password"
+                       placeholder="Password"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label for="userName">Username</label>
+
+                <input class="form-control"
+                       type="text"
+                       [(ngModel)]="userName"
+                       id="userName"
+                       name="userName"
+                       placeholder="Username"
+                       required>
+
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container steps">
+    <div class="row ">
+      <div class="col-sm-12">
+        <ul class="list-unstyled">          
+            <li class="row">
+              <div class="col-sm-4">
+                  <div class="smpl-step-icon">
+                    <i class="fa fa-book icon" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <p class="lead">Keep records about your books in one place, tracking book status and priority</p>
+                </div>
+              </li>
+              <li class="row">
+                  <div class="col-sm-4">
+                      <div class="smpl-step-icon">
+                        <i class="fa fa-plus-square icon" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <p class="lead">Create your own book categories</p>
+                    </div>
+              </li>
+         
+              <li class="row">
+                  <div class="col-sm-4">
+                    <div class="smpl-step-icon">
+                      <i class="fa fa-envelope icon" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-8">
+                    <p class="lead">Receive email notifications about book reading</p>
+                  </div>
+              </li>
+        </ul>
+      </div>    
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+﻿<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      
+      <button class="btn btn-primary" id="addButton" (click)="showAddBookModal()">Add Book</button>
+      <hr>
+
+      <ngb-tabset class="book-tabs">
+         <ngb-tab title="All">
+          <ng-template ngbTabContent>
+            <app-books-list [activeTab]="'all'"></app-books-list>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="To Read">
+          <ng-template ngbTabContent>
+            <app-books-list [activeTab]="'toRead'"></app-books-list>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="In Progress">
+          <ng-template ngbTabContent>
+            <app-books-list [activeTab]="'inProgress'"></app-books-list>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Completed">
+          <ng-template ngbTabContent>
+            <app-books-list [activeTab]="'completed'"></app-books-list>
+          </ng-template>
+        </ngb-tab>
+
+      </ngb-tabset>
+
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <aside id="sidebar" class="sidebar">
+        <app-search-block></app-search-block>
+      </aside>
+    </div>
+  </div>
+</div>

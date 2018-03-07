@@ -1,0 +1,49 @@
+﻿<div id="search-component">
+  <div class="card">
+    <div class="card-header">
+        <h5>Quick Search</h5>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="#prioritySelect">Choose Priority</label>
+        
+            <select class="form-control" 
+                    id="#prioritySelect" 
+                    #prioritySelect
+                    (change)="filterBook()" 
+                    [(ngModel)]="priorityTerm">
+        
+              <option value="" selected="selected">All</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+        
+            </select>
+        
+          </div>
+          <div class="form-group">
+            <input #searchBox 
+                    id="search-box" 
+                    [(ngModel)]="textTerm"
+                    (keyup)="filterBook()"
+                    placeholder="search book" 
+                    class="form-control"/>
+          </div>
+          <div class="row justify-content-around">
+            <div class="btn-group mb-2 col-auto" *ngFor="let bookTag of categories$ | async">
+              <button class="btn btn-sm"
+                      (click)="toggleSelectedCategory(bookTag)"
+                      ngClass="{{ifSelected(bookTag)}}">{{ bookTag }}</button>
+            </div>
+          </div>  
+          <div class="form-group reset">
+            <button type="button" class="btn btn-default btn-sm" (click)="resetSearch()">
+              <i class="fa fa-history"></i>
+              Reset Search
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  

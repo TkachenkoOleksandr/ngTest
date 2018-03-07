@@ -1,0 +1,53 @@
+<h6>Books List:</h6>
+<div *ngIf="(books$ | async)?.length > 0; else emptyList" class="books-container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+          <th (click)="sort('title')">
+            Title
+            <fa name="sort"></fa>
+          </th>
+          <th (click)="sort('author')">
+            Author
+            <fa name="sort"></fa>
+          </th>
+          <th (click)="sort('priority')">
+            Priority
+            <fa name="sort"></fa>
+          </th>
+          <th>Categories</th>
+          <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>
+            <span *ngIf="book.priority === 'low'" class="badge badge-success">Low</span>
+            <span *ngIf="book.priority === 'medium'" class="badge badge-warning">Medium</span>
+            <span *ngIf="book.priority === 'high'" class="badge badge-danger">High</span>
+          </td>
+          <td>
+            <span class="mr-1 d-inline-block">{{ book.categories?.join(', ') }}</span>
+          </td>
+          <td>
+            <div class="btn-group action-buttons">
+              <button type="button" 
+                      class="btn btn-warning btn-sm" 
+                      (click)="editBook(book)">Edit</button>
+
+              <button type="button"
+                      class="btn btn-danger btn-sm"
+                      (click)="getConfirmation(book)">Delete</button>
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #emptyList>
+  <p class="lead">You have no any book</p>
+</ng-template>
+
+

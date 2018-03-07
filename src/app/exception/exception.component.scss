@@ -1,0 +1,15 @@
+@import "~_variables.scss";
+
+.exception {
+    width: 300px;
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 150px);
+    background: #dc3545;
+    color: #fff;
+    box-shadow: $box-shadow-1;
+    
+    & .close {
+         color: #fff;
+     }
+}
